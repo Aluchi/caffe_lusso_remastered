@@ -1,11 +1,15 @@
 import React, { useContext } from "react";
 import { MainContext } from "../contexts/MainContext";
+import { Helmet } from "react-helmet";
 
 function Menu() {
   const { sectionMenuProds } = useContext(MainContext);
 
   return (
     <main>
+      <Helmet>
+        <title>Menu | Caffé Lusso</title>
+      </Helmet>
       <section className="wrapper py-28">
         <div className="menu-title">
           <h1>Our Menu</h1>

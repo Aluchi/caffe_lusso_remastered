@@ -1,8 +1,12 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 function About() {
   return (
     <main>
+      <Helmet>
+        <title>About | Caffé Lusso</title>
+      </Helmet>
       <section className="about-hero bg-cover bg-center"></section>
       <div className="wrapper py-24 px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
