@@ -1,0 +1,300 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --sale: #ff0000;
+  --white: #ffffff;
+  --soft-dark: #101010;
+  --white-soft: #f5f5f5;
+  --dark-green: #556b2f;
+  --ff: "Lora", serif;
+}
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+}
+.sections-center-title {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 400;
+  margin-bottom: 3rem;
+  font-size: 24px;
+}
+
+body {
+  font-family: var(--ff);
+}
+
+/***************************************/
+
+header {
+  background-color: var(--white-soft);
+}
+header div.wrapper nav ul li a {
+  font-size: 17px;
+  padding: 8px 10px;
+  transition: 0.2s;
+}
+header div.wrapper nav ul li a:hover {
+  color: var(--dark-green);
+}
+.hero-section {
+  background-image: url("./imgs/hero-c.png");
+  height: 80vh;
+}
+.hero-section div h1::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  transform: translateX(-50%);
+  background-color: #556b2f;
+  height: 5px;
+  animation: grow-line 1.5s ease-out forwards;
+}
+@keyframes grow-line {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 80%;
+  }
+}
+
+/* Botón de abrir/cerrar menú */
+header .open-menu {
+  display: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+header nav .close-menu {
+  display: none;
+}
+
+/*********************************/
+
+.carousel-card {
+  position: relative;
+  box-shadow: 4px 4px 6px 2px rgba(0, 0, 0, 0.43);
+  -webkit-box-shadow: 4px 4px 6px 2px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 4px 4px 6px 2px rgba(0, 0, 0, 0.43);
+}
+.carousel-item-details {
+  padding: 15px;
+}
+.sale-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  color: var(--white);
+  font-size: 0.9rem;
+  font-weight: bold;
+  background-color: var(--sale);
+  padding: 5px 10px;
+  border-radius: 0 20px;
+}
+.recommendations-card-img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  padding: 0.5rem;
+  border: 6px dotted var(--dark-green);
+}
+
+.menu-title {
+  text-align: center;
+  margin-bottom: 80px;
+}
+.menu-title h1 {
+  text-transform: capitalize;
+  font-size: 35px;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 15px;
+  margin-bottom: 10px;
+}
+.menu-title h1::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 3px;
+  background-color: var(--dark-green);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.menu-column h4 {
+  text-transform: capitalize;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  position: relative;
+  padding: 10px;
+}
+.menu-column h4::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 2px;
+  background-color: #556b2f;
+  bottom: 0;
+}
+.menu-column .single-menu {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+}
+.menu-column .single-menu img {
+  object-fit: cover;
+  overflow: hidden;
+  max-width: 110px;
+  border-radius: 50%;
+  border: 1px dashed var(--dark-green);
+  padding: 3px;
+  margin-right: 15px;
+  transition: 0.3s;
+}
+.menu-column .single-menu:hover img {
+  transform: rotate(360deg);
+}
+.menu-column .single-menu .menu-content h5 {
+  text-transform: capitalize;
+  font-size: 22px;
+  font-weight: 500;
+  border-bottom: 1px dashed #222;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+.menu-column .single-menu .menu-content .price {
+  color: var(--dark-green);
+  float: right;
+  font-weight: 600;
+  font-style: italic;
+}
+
+/************/
+
+.accordion-item .accordion-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  padding: 18px 0;
+  border-top: 1px var(--dark-green) solid;
+}
+
+/******************/
+
+.about-hero {
+  background-image: url("./imgs/about-hero.jpg");
+  height: 20vh;
+}
+.about-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+}
+.about-section h3 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+/******************/
+
+.main-footer {
+  background-color: var(--soft-dark);
+  color: var(--white);
+}
+.main-footer a {
+  transition: 0.3s ease;
+}
+.main-footer a:hover {
+  color: var(--dark-green);
+}
+/*MQ HEADER*/
+
+@media screen and (max-width: 768px) {
+  header {
+    position: relative;
+  }
+  header nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  header nav ul li {
+    border-top: 1px var(--dark-green) solid;
+    padding-top: 10px;
+  }
+  header nav ul li:first-child {
+    border-top: none;
+  }
+  header .open-menu {
+    display: block;
+    color: var(--soft-dark);
+    z-index: 10;
+  }
+  header nav {
+    padding: 2rem 1rem ;
+    display: block;
+    background-color: var(--white-soft);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    text-align: right;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  header nav.visible {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  header nav .close-menu {
+    display: block;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    color: var(--soft-dark);
+    margin-bottom: 1rem;
+  }
+}
+
+/*****************/
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .single-menu {
+    flex-direction: column;
+  }
+  .single-menu img {
+    margin-bottom: 25px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .menu-column {
+    width: 100%;
+    margin-bottom: 60px;
+  }
+  .single-menu {
+    flex-direction: column;
+  }
+  .single-menu img {
+    margin-bottom: 25px;
+  }
+}
